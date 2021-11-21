@@ -1,0 +1,20 @@
+PROCEDURE permut(VAR elt1:INTEGER,VAR elt2:INTEGER)
+VAR
+temp:INTEGER;
+BEGIN
+    temp:=elt1;
+    elt1:=elt2;
+    elt2:=temp;
+END
+ALGORITHM sortArray
+VAR
+    tab:ARRAY_OF INTEGER[100];
+BEGIN
+    FOR i FROM 1 TO tab.length-1 DO
+        j:=i;
+        WHILE (j>0 AND arr[j]<arr[j-1]) DO
+            permut(arr[j-1],arr[j])
+            j:=j-1
+        END_WHILE
+    END_FOR
+END
